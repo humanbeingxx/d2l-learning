@@ -31,10 +31,16 @@ import torch
 
 # print(a[0:1])
 
-y = torch.tensor([0, 2])
-y_hat = torch.tensor([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
+# y = torch.tensor([0, 2])
+# y_hat = torch.tensor([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
 
-print(y_hat[[0, 1], [0, 1]])
+# print(y_hat[[0, 1], [0, 1]])
 
-a = torch.ones(2, 3)
-print((a, a))
+# a = torch.ones(2, 3)
+# print((a, a))
+
+cpu_ones = torch.ones(5)
+gpu_ones = torch.ones(5, device="cuda")
+print(cpu_ones.device)
+print(gpu_ones.device)
+cpu_ones + gpu_ones
